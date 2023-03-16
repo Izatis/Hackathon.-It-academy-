@@ -1,0 +1,10 @@
+{
+    "title" : "Convertissez le PNR en une représentation compréhensible pour les passagers",
+    "description" : "Collez le PNR de n'importe quel GDS et nous le convertirons en une représentation compréhensible pour les passagers. Convertissez les options en une seconde. Gagnez du temps.",
+    "exampleFirst" : "15 oct., 10:10 – 12:00, London (Gatwick) — Vancouver, TS 275, Air Transat",
+    "exampleSecond" : "15 oct., 13:35 – 14:35, Vancouver — Seattle (Tacoma), AC 8097, Air Canada",
+    "exampleThree" : "17 oct., 17:00 – 17:53, Seattle (Tacoma) — Portland, AS 2254, Alaska Airlines",
+    "exampleFour" : "17 oct., 18:45 – 12:10, Portland — London (Heathrow), AA 7007, American Airlines",
+    "label" : "variante N1",
+    "placeholder" : "Inserez PNR depuis n'importe quel GDS"
+}
