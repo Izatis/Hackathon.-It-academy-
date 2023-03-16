@@ -5,8 +5,6 @@ import img from "../../assets/airplane.png";
 import { motion } from "framer-motion";
 import MyInput from "../../components/MUI/MyInput/MyInput";
 import { exampleContext } from "../../context";
-import './Main.css'
-import cn from "classnames";
 const Main = () => {
   const { t } = useContext(exampleContext);
   return (
@@ -56,12 +54,7 @@ const Main = () => {
                 <li>AA7007 J 17OCT 6 PDXLHR HK1 1845 1210+1 788 E 0</li>
               </motion.ol>
 
-              <div class="container">
-                <span class="circle">
-                  <i class="fa fa-arrow-down"></i>
-                </span>
-                <span class="pulse"></span>
-              </div>
+              
               <motion.ul
                 initial="hidden"
                 whileInView="visible"
@@ -79,7 +72,7 @@ const Main = () => {
             </div>
           </div>
         </div>
-        <MyInput label={t("label")} placeholder={t("placeholder")} />
+        <MyInput label={t("label")} placeholder={t("placeholder")} style={{maxWidth: 300}}/>
 
         <div className={s.signIn}>
           <span className={s.signIn_btn}>{t("signIn")}</span>

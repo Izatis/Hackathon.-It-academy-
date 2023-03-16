@@ -1,7 +1,8 @@
 .ant-row {
   display: block;
-  width: 500px;
 }
+
+
 
 :where(.css-dev-only-do-not-override-ph9edi).ant-form-item
   .ant-form-item-label

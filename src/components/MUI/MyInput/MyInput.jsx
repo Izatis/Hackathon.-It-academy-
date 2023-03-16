@@ -5,7 +5,7 @@ import "./MyInput.css";
 const MyInput = ({ label, ...props }) => {
   return (
     <Form.Item label={label}>
-      <Input {...props} />
+      <Input {...props}/>
     </Form.Item>
   );
 };
