@@ -1,12 +1,12 @@
 .sign_up {
   display: flex;
-  padding: 20px 40px;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   height: calc(100vh - 165px);
 
-  .sign_up_wallpaper {
-    width: 520px;
+  .animation {
+    width: 900px;
+    height: 100%;
     border-radius: 40px;
   }
 
@@ -20,6 +20,7 @@
     font-style: normal;
     color: #1f54fb;
     padding: 30px;
+    margin-right: 40px;
 
     h1 {
       text-align: center;

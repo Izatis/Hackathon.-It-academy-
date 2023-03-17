@@ -23,31 +23,21 @@ const SignIn = () => {
   const { type, passwordHide } = useContext(exampleContext);
 
   const [userLogin, setUserLogin] = useState({
-    email: "",
-    password: "",
-  });
-
-  const navigate = useNavigate();
+    login: "user",
+    password: "user",
+  });  
 
 //   Отправляем post запрос и за одно проверяется пользователь и перенапраляется на профиль
   const verifyUser = async () => {
     setIsLoading(false);
     try {
-      const { data } = await axios.post(
-        "http://localhost:8080/login",
+    const {data} = await axios.post(
+        "http://localhost:9090/moderator/user/all",
         userLogin
-      );
-      localStorage.setItem("token", JSON.stringify(data.token));
-      const token = JSON.parse(localStorage.getItem("token"));
-      const loginOpen = () => {
-        if (!!token) {
-          navigate("/");
-        }
-      };
-      loginOpen();
+      )
       setIsLoading(true);
     } catch (error) {
-      setMessage(error.response.data.error);
+      console.log(error)
     }
     setIsLoading(true);
   };
@@ -74,9 +64,9 @@ const SignIn = () => {
           }}>Вход</motion.h1>
             <form className={s.sign_in_inputs_btn}>
               <MyInput
-                value={userLogin.email}
+                value={userLogin.login}
                 onChange={(e) =>
-                  setUserLogin({ ...userLogin, email: e.target.value })
+                  setUserLogin({ ...userLogin, login: e.target.value })
                 }
                 type="email"
                 placeholder="E-mail"
@@ -99,7 +89,7 @@ const SignIn = () => {
               {!!message.length && <span className={s.sign_in_message}>{message}</span>}
 
               {/* Это сравнение проверяет на содержания инпутов и изменяет кнопки */}
-              {!!userLogin.email.length && !!userLogin.password.length ? (
+              {!!userLogin.login.length && !!userLogin.password.length ? (
                 <MyButton
                 className={s.enter}
                   onClick={verifyUser}

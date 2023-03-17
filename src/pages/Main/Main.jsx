@@ -8,24 +8,36 @@ import MyButton from "../../components/MUI/MyButton/MyButton";
 import { Input } from "antd";
 import copy from "../../assets/copy.png";
 import axios from "axios";
-import classNames from 'classnames'
-
+import classNames from "classnames";
 
 const Main = () => {
   const { t } = useContext(exampleContext);
-  const [data, setData] = useState([])
-  console.log(data);
-  
-  useEffect(() => {
-    axios.post('http://localhost:9090/admin').then((res) => {
-    setData(res)
+  const [data, setData] = useState([]);
+  const [phr, setPhr] = useState({
+    pnrInfo: ''
   })
-  },[])
+  console.log(phr);
 
-  const [active, setActive] = useState(true)
-  const [activeSecond, setActiveSecond] = useState(true)
-  console.log(active);
-  console.log(activeSecond);
+  const flightsData = async () => {
+    try {
+      axios
+        .get(
+          "https://jsonplaceholder.typicode.com/todos/"
+        )
+        .then((res) => {
+          console.log(res)
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    flightsData()
+  }, []);
+
+  const [active, setActive] = useState(true);
+  const [activeSecond, setActiveSecond] = useState(true);
 
   return (
     <section className={s.main}>
@@ -92,7 +104,9 @@ const Main = () => {
       <div style={{ width: "100%" }}>
         <label style={{ width: "100%" }} htmlFor="">
           {t("label")}
-          <MyInput style={{ maxWidth: 700}} placeholder={t("placeholder")} />
+          <MyInput onChange={(e) =>
+                  setPhr({ pnrInfo: e.target.value })
+           } style={{ maxWidth: 700 }} placeholder={t("placeholder")} />
         </label>
 
         <div className={s.info}>
@@ -101,8 +115,12 @@ const Main = () => {
               <span>Ссылка создана:</span>
               <p>https://aviato.me/509ffb2eca</p>
             </div>
-            <p><h1>TT</h1> Копировать текстом</p>
-            <p><img src={copy} alt="copy" /> Копировать ссылку</p>
+            <p>
+              <h1>TT</h1> Копировать текстом
+            </p>
+            <p>
+              <img src={copy} alt="copy" /> Копировать ссылку
+            </p>
           </header>
           <div className={s.text_content}>
             <h1>{t("info_text")}</h1>
@@ -125,10 +143,25 @@ const Main = () => {
               <br />
 
               <div className={s.info_btn}>
-             
-                <MyInput  style={{ maxWidth: 70 , border: 'none'}} min="5"  type="number">Цена:</MyInput>
-                <MyButton  className={activeSecond ? s.active : s.include} onClick={()=> setActive(false)}>Багаж включён</MyButton>
-                <MyButton className={active ?  s.active : s.include} onClick={()=> setActiveSecond(false)}>Только ручная кладь</MyButton>
+                <MyInput
+                  style={{ maxWidth: 70, border: "none" }}
+                  min="5"
+                  type="number"
+                >
+                  Цена:
+                </MyInput>
+                <MyButton
+                  className={activeSecond ? s.active : s.include}
+                  onClick={() => setActive(false)}
+                >
+                  Багаж включён
+                </MyButton>
+                <MyButton
+                  className={active ? s.active : s.include}
+                  onClick={() => setActiveSecond(false)}
+                >
+                  Только ручная кладь
+                </MyButton>
                 <MyButton className={s.active}>+ Своя метка</MyButton>
               </div>
             </div>

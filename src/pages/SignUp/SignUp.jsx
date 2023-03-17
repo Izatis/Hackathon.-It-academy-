@@ -11,6 +11,10 @@ import eye from "../../assets/eye.png";
 import { exampleContext } from "../../context";
 import wallpaper from "../../assets/wallpaper.png";
 import { motion } from "framer-motion";
+import { OrbitControls } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import { Model } from '../../models/Car';
+
 
 
 const SignUp = () => {
@@ -56,13 +60,32 @@ const SignUp = () => {
 
   return (
     <section className={s.sign_up}>
-      <motion.img initial="hidden"
+      {/* <motion.img initial="hidden"
           whileInView="visible"
           transition={{ duration: 1 }}
           variants={{
             visible: { opacity: 1, x: 0 },
             hidden: { opacity: 0, x: 100 },
-          }} className={s.sign_up_wallpaper} src={'https://cdn.dribbble.com/users/112518/screenshots/4612754/long-version-v4.gif'} alt="wallpaper" />
+          }} className={s.sign_up_wallpaper} src={'https://cdn.dribbble.com/users/112518/screenshots/4612754/long-version-v4.gif'} alt="wallpaper" /> */}
+
+<div className={s.animation}>
+<Canvas camera={{position: [2, 0, -4], zoom: 1}}>
+      <OrbitControls/>
+        <color attach="background" />
+        <hemisphereLight intensity={0.35}/>
+        <spotLight
+        position={[10, 10, 10]}
+        angle={0.3}
+        penumbra={1}
+        intensity={2}
+        castShadow
+
+        />
+      <Suspense fallback={null}>
+        <Model/>
+      </Suspense>
+      </Canvas>
+</div>
 
       {isLoading ? (
         <div className={s.sign_up_content}>

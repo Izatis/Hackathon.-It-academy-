@@ -18,16 +18,12 @@ const ExampleContextProvider = ({ children }) => {
       setType("password");
     }
   };
-
-  console.log(type);
-
   let values = {
     t,
     i18n,
     isLoading,
     setIsLoading,
     type,
-    
     passwordHide
   };
 
