@@ -1,4 +1,9 @@
 button {
-  border: none;
-  cursor: pointer;
 }
+
+button:disabled {
+  transition: 0.3s !important;
+  background: #d5d5d5 !important;
+  color: #f3f3f3 !important;
+}
+

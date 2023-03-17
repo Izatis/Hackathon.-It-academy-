@@ -1,0 +1,80 @@
+.sign_in {
+  display: flex;
+  padding: 20px 40px;
+  justify-content: space-around;
+  align-items: center;
+  height: calc(100vh - 165px) !important;
+
+
+
+  .sign_in_wallpaper {
+    width: 520px;
+    border-radius: 40px;
+  }
+
+  .sign_in_content {
+    max-width: 400px;
+    width: 100%;
+    background: #fbfdff;
+    box-shadow: 5px 5px 12px -2px rgba(72, 145, 255, 0.45);
+    border-radius: 15px;
+    font-style: normal;
+    color: #1f54fb;
+    padding: 30px;
+    box-sizing: border-box;
+
+    
+    h1 {
+      text-align: center;
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 140%;
+      margin: 10px 0 20px 0;
+    }
+
+    .sign_in_inputs_btn {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      position: relative;
+
+      .sign_in_hide_password {
+        position: absolute;
+        z-index: 1;
+        right: 18.75px;
+        bottom: 75px;
+
+        img {
+          width: max-content;
+          height: 12px;
+          user-select: none;
+          cursor: pointer;
+        }
+      }
+      .sign_in_message {
+        color: #f11515;
+      }
+      .enter {
+        height: 40px;
+        border: none;
+        box-shadow: 5px 5px 12px -2px rgba(72, 145, 255, 0.45);
+        transition: 0.7s;
+        font-size: 15px;
+        font-weight: 700;
+        color: #4891ff;
+      }
+
+      .enter:hover {
+        background-color: #1f54fb;
+        color: #fff !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  section{
+    display: block;
+  }
+  
+}

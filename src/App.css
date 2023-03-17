@@ -1,14 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap");
-
-
-.App {
-  font-family: "Open Sans", sans-serif;
-  background: linear-gradient(
-      137.61deg,
-      rgba(31, 84, 251, 0.142) 5.55%,
-      rgba(246, 250, 255, 0.106) 29.09%,
-      rgba(72, 145, 255, 0) 93.14%
-    ),
-    #ffffff;
+.App{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(21, 231, 161);
 }
-

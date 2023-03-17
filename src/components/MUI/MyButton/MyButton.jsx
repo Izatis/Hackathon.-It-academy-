@@ -1,8 +1,9 @@
+import { Button } from "antd";
 import React from "react";
 import s from "./MyButton.module.scss";
 
 const MyButton = ({ children, ...props }) => {
-  return <button {...props}>{children}</button>;
+  return <Button {...props}>{children}</Button>;
 };
 
 export default MyButton;

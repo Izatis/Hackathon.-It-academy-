@@ -1,10 +1,18 @@
 {
-    "title" : "Convierte un PNR a un formato amigable para el pasajero",
-    "description" : "Copia y pega el PNR de cualquier GDS y lo convertiremos a un formato amigable para el pasajero. Convierte PNRs de forma instantánea. Ahorra tiempo.",
-    "exampleFirst" : "15 oct., 10:10 – 12:00, London (Gatwick) — Vancouver, TS 275, Air Transat",
-    "exampleSecond" : "15 oct., 13:35 – 14:35, Vancouver — Seattle (Tacoma), AC 8097, Air Canada",
-    "exampleThree" : "17 oct., 17:00 – 17:53, Seattle (Tacoma) — Portland, AS 2254, Alaska Airlines",
-    "exampleFour" : "17 oct., 18:45 – 12:10, Portland — London (Heathrow), AA 7007, American Airlines",
-    "label" : "Opción no. 1",
-    "placeholder" : "Copia y pega el PNR de cualquier GDS"
+  "title": "Convierte un PNR a un formato amigable para el pasajero",
+  "description": "Copia y pega el PNR de cualquier GDS y lo convertiremos a un formato amigable para el pasajero. Convierte PNRs de forma instantánea. Ahorra tiempo.",
+  "exampleFirst": "15 oct., 10:10 – 12:00, London (Gatwick) — Vancouver, TS 275, Air Transat",
+  "exampleSecond": "15 oct., 13:35 – 14:35, Vancouver — Seattle (Tacoma), AC 8097, Air Canada",
+  "exampleThree": "17 oct., 17:00 – 17:53, Seattle (Tacoma) — Portland, AS 2254, Alaska Airlines",
+  "exampleFour": "17 oct., 18:45 – 12:10, Portland — London (Heathrow), AA 7007, American Airlines",
+  "label": "Opción no. 1",
+  "placeholder": "Copia y pega el PNR de cualquier GDS",
+  "signIn": "Iniciar sesión",
+  "signUp": "Registro",
+
+  "entrance": {
+    "entrance": "Вхід"
+  },
+  "link": "",
+  "info_text": ""
 }
