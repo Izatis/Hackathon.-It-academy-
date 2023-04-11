@@ -1,30 +1,41 @@
 header {
+  background: #1f54fb;
+  box-shadow: 5px 5px 12px -2px rgba(72, 145, 255, 0.45);
+  border-radius: 0px 0px 20px 20px;
   .content {
     max-width: 1440px;
-    height: 65px;
+    width: 100%;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #1f54fb;
-    box-shadow: 5px 5px 12px -2px rgba(72, 145, 255, 0.45);
-    border-radius: 0px 0px 20px 20px;
     margin: 0 auto;
     padding: 0 40px;
+    box-sizing: border-box;
     .logo {
+      font-family: "Montserrat Alternates", sans-serif;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 32px;
+      line-height: 152%;
       color: #fff;
+      margin: 0;
       cursor: pointer;
     }
 
     .header_btn {
-      max-width: 580px;
-      width: 100%;
       display: flex;
-      justify-content: end;
+      justify-content: flex-end;
+      align-items: center;
+      margin: 16.5px;
 
       .btn {
-        font-size: 12px;
-        color: #4891ff;
+        font-family: "Montserrat", sans-serif;
+        font-style: normal;
         font-weight: 700;
+        font-size: 12px;
+        line-height: 152%;
+        color: #4891ff;
         margin-right: 13px;
       }
       .btn:hover {
@@ -33,16 +44,90 @@ header {
         border: 1px solid #fff;
       }
 
-      .sign_in { 
-        font-size: 15px;
-        color: #4891ff;
+      .sign {
+        font-family: "Montserrat", sans-serif;
+        font-style: normal;
         font-weight: 700;
+        font-size: 15px;
+        line-height: 152%;
+        color: #4891ff;
         margin-left: 50px;
       }
-      .sign_in:hover {
+      .sign:hover {
         background-color: #1f54fb;
         color: #fff !important;
         border: 1px solid #fff;
+      }
+    }
+  }
+  .header_btn_clone {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    .content {
+      padding: 0 30px;
+      .logo {
+        font-weight: 700;
+        font-size: 27px;
+      }
+      .header_btn {
+        margin: 6.5px;
+        .btn {
+          display: none;
+        }
+        .sign {
+          font-size: 12px;
+          margin-left: 30px;
+        }
+      }
+    }
+    .header_btn_clone {
+      display: flex;
+      justify-content: flex-end;
+      margin: auto;
+      padding: 7px 30px;
+      box-sizing: border-box;
+      .btn_clone {
+        height: 20px;
+        font-family: "Montserrat", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 8px;
+        line-height: 152%;
+        color: #4891ff;
+        margin-right: 13px;
+      }
+      .btn_clone:hover {
+        background-color: #1f54fb;
+        color: #fff !important;
+        border: 1px solid #fff;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  header {
+    .content {
+      padding: 0 20px;
+      .logo {
+        font-size: 25px;
+      }
+
+      .header_btn {
+        .sign {
+          height: 30px;
+          font-size: 13px;
+          margin-left: 50px;
+        }
+      }
+    }
+    .header_btn_clone {
+      .btn_clone {
+        margin-right: 10px;
       }
     }
   }

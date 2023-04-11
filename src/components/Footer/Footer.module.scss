@@ -11,11 +11,24 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 152%;
     color: #1f54fb;
     text-decoration: none;
     user-select: none;
     p {
       color: #838383;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  footer {
+    a {
+      font-size: 12px;
     }
   }
 }

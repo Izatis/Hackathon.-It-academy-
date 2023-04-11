@@ -11,37 +11,18 @@ import axios from "axios";
 import classNames from "classnames";
 
 const Main = () => {
+  // Функция - для смены текста
   const { t } = useContext(exampleContext);
-  const [data, setData] = useState([]);
   const [phr, setPhr] = useState({
-    pnrInfo: ''
-  })
-  console.log(phr);
-
-  const flightsData = async () => {
-    try {
-      axios
-        .get(
-          "https://jsonplaceholder.typicode.com/todos/"
-        )
-        .then((res) => {
-          console.log(res)
-        });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    flightsData()
-  }, []);
+    pnrInfo: "",
+  });
 
   const [active, setActive] = useState(true);
   const [activeSecond, setActiveSecond] = useState(true);
 
   return (
     <section className={s.main}>
-      <div className={s.content}>
+      <div className={s.left_block}>
         <img src={img} alt="img" />
 
         <motion.h1
@@ -53,7 +34,7 @@ const Main = () => {
             hidden: { opacity: 0, x: 100 },
           }}
         >
-          {t("title")}
+          {t("hero.leftBlock.title")}
         </motion.h1>
 
         <motion.p
@@ -65,7 +46,7 @@ const Main = () => {
             hidden: { opacity: 0, x: 100 },
           }}
         >
-          {t("description")}
+          {t("hero.leftBlock.description")}
         </motion.p>
 
         <div className={s.example}>
@@ -93,76 +74,84 @@ const Main = () => {
               hidden: { opacity: 0, x: 100 },
             }}
           >
-            <li>{t("exampleFirst")}</li>
-            <li>{t("exampleSecond")}</li>
-            <li>{t("exampleThree")}</li>
-            <li>{t("exampleFour")}</li>
+            <li>{t("hero.leftBlock.examples.1")}</li>
+            <li>{t("hero.leftBlock.examples.2")}</li>
+            <li>{t("hero.leftBlock.examples.3")}</li>
+            <li>{t("hero.leftBlock.examples.0")}</li>
           </motion.ul>
         </div>
       </div>
+      <div className={s.right_block}>
+        <div style={{ width: "100%" }}>
+          <label style={{ width: "100%" }} htmlFor="">
+            {t("hero.rightBlock.label")}
+            <MyInput
+              onChange={(e) => setPhr({ pnrInfo: e.target.value })}
+              style={{ maxWidth: 700 }}
+              placeholder={t("hero.rightBlock.placeholder")}
+            />
+          </label>
 
-      <div style={{ width: "100%" }}>
-        <label style={{ width: "100%" }} htmlFor="">
-          {t("label")}
-          <MyInput onChange={(e) =>
-                  setPhr({ pnrInfo: e.target.value })
-           } style={{ maxWidth: 700 }} placeholder={t("placeholder")} />
-        </label>
-
-        <div className={s.info}>
-          <header>
-            <div>
-              <span>Ссылка создана:</span>
-              <p>https://aviato.me/509ffb2eca</p>
-            </div>
-            <p>
-              <h1>TT</h1> Копировать текстом
-            </p>
-            <p>
-              <img src={copy} alt="copy" /> Копировать ссылку
-            </p>
-          </header>
-          <div className={s.text_content}>
-            <h1>{t("info_text")}</h1>
-            <div className={s.flights}>
-              <div className={s.items}>
-                <div className={s.item}>
-                  <p>Лондон</p>
-                  <p>
-                    <strong>10:10</strong>, 15 окт
-                  </p>
-                </div>
-                <span>Air Transat</span>
-                <div className={s.item}>
-                  <p>Ванкувер</p>
-                  <p>
-                    <strong>12:00</strong>
-                  </p>
-                </div>
+          <div className={s.info}>
+            <header>
+              <div>
+                <span>{t("hero.rightBlock.info.0")}</span>
+                <p>https://aviato.me/509ffb2eca</p>
               </div>
-              <br />
+              <p>
+                <h1>TT</h1>
+                {t("hero.rightBlock.info.1")}
+              </p>
+              <p>
+                <img src={copy} alt="copy" />
+                {t("hero.rightBlock.info.2")}
+              </p>
+            </header>
+            <div className={s.text_content}>
+              <h1>{t("hero.rightBlock.info.3")}</h1>
+              <div className={s.flights}>
+                <div className={s.items}>
+                  <div className={s.item}>
+                    <p>{t("hero.rightBlock.info.4")}</p>
+                    <p>
+                      <strong>10:10</strong>, {t("hero.rightBlock.info.5")}
+                    </p>
+                  </div>
+                  <span>Air Transat</span>
+                  <div className={s.item}>
+                    <p>{t("hero.rightBlock.info.6")}</p>
+                    <p>
+                      <strong>12:00</strong>
+                    </p>
+                  </div>
+                </div>
+                <br />
 
-              <div className={s.info_btn}>
-                <MyInput
-                  style={{ maxWidth: 70, border: "none" }}
-                  min="5"
-                  type="number"
-                >
-                  Цена:
-                </MyInput>
-                <MyButton
-                  className={activeSecond ? s.active : s.include}
-                  onClick={() => setActive(false)}
-                >
-                  Багаж включён
-                </MyButton>
-                <MyButton
-                  className={active ? s.active : s.include}
-                  onClick={() => setActiveSecond(false)}
-                >
-                  Только ручная кладь
-                </MyButton>
-                <MyButton className={s.active}>+ Своя метка</MyButton>
+                <div className={s.info_btn}>
+                  <MyInput
+                    style={{ maxWidth: 70, border: "none" }}
+                    type="number"
+                    min="5"
+                    minWidth={108}
+                  >
+                    {t("hero.rightBlock.info.7")}
+                  </MyInput>
+                  <MyButton
+                    className={activeSecond ? s.active : s.include}
+                    onClick={() => setActive(false)}
+                  >
+                    {t("hero.rightBlock.info.8")}
+                  </MyButton>
+                  <MyButton
+                    className={active ? s.active : s.include}
+                    onClick={() => setActiveSecond(false)}
+                  >
+                    {t("hero.rightBlock.info.9")}
+                  </MyButton>
+                  <MyButton className={s.active}>
+                    {t("hero.rightBlock.info.10")}
+                  </MyButton>
+                </div>
               </div>
             </div>
           </div>

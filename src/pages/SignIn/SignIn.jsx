@@ -11,8 +11,12 @@ import eye from "../../assets/eye.png";
 import { exampleContext } from "../../context";
 import wallpaper from '../../assets/wallpaper.png'
 import { motion } from "framer-motion";
+import gif from '../../assets/long-version-v4.gif'
 
 const SignIn = () => {
+  // Функция - для смены текста
+  const { t } = useContext(exampleContext);
+
   // Здесь сохраняется сообщение от сервера
   const [message, setMessage] = useState("");
 
@@ -23,8 +27,8 @@ const SignIn = () => {
   const { type, passwordHide } = useContext(exampleContext);
 
   const [userLogin, setUserLogin] = useState({
-    login: "user",
-    password: "user",
+    login: "",
+    password: "",
   });  
 
 //   Отправляем post запрос и за одно проверяется пользователь и перенапраляется на профиль
@@ -50,7 +54,7 @@ const SignIn = () => {
           variants={{
             visible: { opacity: 1, x: 0 },
             hidden: { opacity: 0, x: 100 },
-          }} className={s.sign_in_wallpaper} src={'https://cdn.dribbble.com/users/112518/screenshots/4612754/long-version-v4.gif'} alt="wallpaper" />
+          }} className={s.sign_in_wallpaper} src={gif} alt="wallpaper" />
 
         {isLoading ? (
           <div className={s.sign_in_content}>
@@ -61,7 +65,7 @@ const SignIn = () => {
           variants={{
             visible: { opacity: 1, x: 0 },
             hidden: { opacity: 0, x: 100 },
-          }}>Вход</motion.h1>
+          }}>{t("form.1")}</motion.h1>
             <form className={s.sign_in_inputs_btn}>
               <MyInput
                 value={userLogin.login}
@@ -69,7 +73,7 @@ const SignIn = () => {
                   setUserLogin({ ...userLogin, login: e.target.value })
                 }
                 type="email"
-                placeholder="E-mail"
+                placeholder={t("form.3")}
               >
               </MyInput>
 
@@ -79,7 +83,7 @@ const SignIn = () => {
                   setUserLogin({ ...userLogin, password: e.target.value })
                 }
                 type={type}
-                placeholder="Пароль"
+                placeholder={t("form.4")}
               >
                 <span className={s.sign_in_hide_password} onClick={passwordHide}>
                   <img src={eye} alt="eye" />
@@ -95,7 +99,7 @@ const SignIn = () => {
                   onClick={verifyUser}
                  
                 >
-                  Войти
+                   {t("form.6")}
                 </MyButton>
               ) : (
                 <MyButton
@@ -103,7 +107,7 @@ const SignIn = () => {
                 disabled
 
                 >
-                  Войти
+                {t("form.6")}
                 </MyButton>
               )}
             </form>

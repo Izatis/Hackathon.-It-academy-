@@ -1,9 +1,19 @@
 .main {
+  max-width: 1440px;
   display: flex;
   gap: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.38;
   padding: 40px;
-  .content {
+  box-sizing: border-box;
+  margin: auto;
+
+  .left_block {
     max-width: 640px;
+    min-width: 592px;
     width: 100%;
     padding: 20px 20px 10px;
     box-sizing: border-box;
@@ -18,29 +28,25 @@
     }
 
     h1 {
-      font-size: 25px;
+      font-family: "Montserrat Alternates", sans-serif;
+      font-style: normal;
       font-weight: 700;
+      font-size: 25px;
+      line-height: 1.38;
       color: #333;
-      opacity: 0.9;
       margin: 2px 0 7px;
     }
 
     p {
       font-size: 14px;
       color: #333;
-      opacity: 0.9;
-      line-height: 1.86;
     }
     .example {
-      margin-top: 16px;
       border-radius: 4px;
       border: 1px solid rgba(51, 51, 51, 0.1);
-      color: #333;
-      margin: 10px;
-      opacity: 0.9;
       font-size: 13px;
-      opacity: 0.76;
-      line-height: 1.38;
+      color: #333;
+      margin: 10px 10px 10px 0;
 
       ul {
         padding-left: 23px;
@@ -48,81 +54,256 @@
       }
     }
   }
-  .info {
-    max-width: 640px;
-    width: 100%;
-    margin: 20px 0;
-    header {
-      height: 40px;
-      background-color: #fbfdff;
-      border-radius: 10px;
-      padding: 7px 12px 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 12px;
 
-      span {
-        color: gray;
-      }
-      p {
-        display: flex;
-        align-items: center;
-        color: #1f54fb;
-        margin: 0;
-        cursor: pointer;
-        h1 {
-          margin: 0 5px 0 0;
-        }
-        img {
-          width: 20px;
-          margin: 0 5px 0 0;
-        }
+  .right_block {
+    label {
+      font-size: 14px;
+      color: #333;
+      input::placeholder {
+        font-family: "Montserrat", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.38;
       }
     }
-    .text_content {
-      padding: 0 20px 10px;
 
-      h1 {
-      }
-      .flights {
+    .info {
+      max-width: 640px;
+      width: 100%;
+      margin: 20px 0;
+      header {
+        height: 40px;
         background-color: #fbfdff;
-        border-radius: 4px;
-        padding: 2px 14px;
+        border-radius: 10px;
+        padding: 7px 12px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 12px;
 
-        .items {
+        span {
+          color: gray;
+        }
+        p {
           display: flex;
           align-items: center;
-          justify-content: space-between;
-          box-sizing: border-box;
-          p {
-            margin: 0;
+          color: #1f54fb;
+          margin: 0;
+          cursor: pointer;
+          h1 {
+            margin: 0 5px 0 0;
+          }
+          img {
+            width: 20px;
+            margin: 0 5px 0 0;
           }
         }
       }
-      .info_btn {
+      .text_content {
+        padding: 0 20px 10px;
+
+        h1 {
+          font-family: "Montserrat Alternates", sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 25px;
+          line-height: 1.38;
+          color: #333;
+        }
+        .flights {
+          background-color: #fbfdff;
+          border-radius: 4px;
+          padding: 2px 14px;
+
+          .items {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+            p {
+              margin: 0;
+            }
+          }
+        }
+        .info_btn {
+          display: flex;
+          align-items: center;
+          button {
+            margin-left: 5px;
+          }
+          .active {
+            display: block;
+            color: #1f54fb;
+          }
+          .include {
+            display: none;
+          }
+
+          .active:focus {
+            background-color: #1f54fb;
+            color: aliceblue;
+          }
+          .include {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .main {
+    max-width: 1440px;
+    display: block;
+    gap: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.38;
+    padding: 40px;
+    box-sizing: border-box;
+
+    .left_block {
+      max-width: 640px;
+      min-width: 592px;
+      width: 100%;
+      padding: 20px 20px 10px;
+      box-sizing: border-box;
+      background: #fbfdff;
+      box-shadow: 5px 5px 12px -2px rgba(72, 145, 255, 0.45);
+      border-radius: 15px;
+      height: calc(100vh - 188px);
+      margin: auto;
+
+      img {
+        height: 40px;
+        width: 40px;
+      }
+
+      h1 {
+        font-family: "Montserrat Alternates", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 1.38;
+        color: #333;
+        margin: 2px 0 7px;
+      }
+
+      p {
+        font-size: 14px;
+        color: #333;
+      }
+      .example {
+        border-radius: 4px;
+        border: 1px solid rgba(51, 51, 51, 0.1);
+        font-size: 13px;
+        color: #333;
+        margin: 10px 10px 10px 0;
+
+        ul {
+          padding-left: 23px;
+          list-style: none;
+        }
+      }
+    }
+    .right_block {
+    }
+    label {
+      font-size: 14px;
+      color: #333;
+      input::placeholder {
+        font-family: "Montserrat", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.38;
+      }
+    }
+
+    .info {
+      max-width: 640px;
+      width: 100%;
+      margin: 20px 0;
+      header {
+        height: 40px;
+        background-color: #fbfdff;
+        border-radius: 10px;
+        padding: 7px 12px 0;
         display: flex;
         align-items: center;
-        button {
-          margin-left: 5px;
+        justify-content: space-between;
+        font-size: 12px;
+
+        span {
+          color: gray;
         }
-        .active {
+        p {
+          display: flex;
+          align-items: center;
           color: #1f54fb;
+          margin: 0;
+          cursor: pointer;
+          h1 {
+            margin: 0 5px 0 0;
+          }
+          img {
+            width: 20px;
+            margin: 0 5px 0 0;
+          }
+        }
+      }
+      .text_content {
+        padding: 0 20px 10px;
 
-          display: block;
+        h1 {
+          font-family: "Montserrat Alternates", sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 25px;
+          line-height: 1.38;
+          color: #333;
         }
-        .include {
-          display: none;
-        }
+        .flights {
+          background-color: #fbfdff;
+          border-radius: 4px;
+          padding: 2px 14px;
 
-        .active:focus {
-          background-color: #1f54fb;
-          color: aliceblue;
+          .items {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+            p {
+              margin: 0;
+            }
+          }
         }
-        .include {
-          display: none;
+        .info_btn {
+          display: flex;
+          align-items: center;
+          button {
+            margin-left: 5px;
+          }
+          .active {
+            display: block;
+            color: #1f54fb;
+          }
+          .include {
+            display: none;
+          }
+
+          .active:focus {
+            background-color: #1f54fb;
+            color: aliceblue;
+          }
+          .include {
+            display: none;
+          }
         }
-        
       }
     }
   }

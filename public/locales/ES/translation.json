@@ -1,18 +1,25 @@
 {
-  "title": "Convierte un PNR a un formato amigable para el pasajero",
-  "description": "Copia y pega el PNR de cualquier GDS y lo convertiremos a un formato amigable para el pasajero. Convierte PNRs de forma instantánea. Ahorra tiempo.",
-  "exampleFirst": "15 oct., 10:10 – 12:00, London (Gatwick) — Vancouver, TS 275, Air Transat",
-  "exampleSecond": "15 oct., 13:35 – 14:35, Vancouver — Seattle (Tacoma), AC 8097, Air Canada",
-  "exampleThree": "17 oct., 17:00 – 17:53, Seattle (Tacoma) — Portland, AS 2254, Alaska Airlines",
-  "exampleFour": "17 oct., 18:45 – 12:10, Portland — London (Heathrow), AA 7007, American Airlines",
-  "label": "Opción no. 1",
-  "placeholder": "Copia y pega el PNR de cualquier GDS",
-  "signIn": "Iniciar sesión",
-  "signUp": "Registro",
+  "general": ["Registro", "Iniciar sesión", "Modelo 3D"],
 
-  "entrance": {
-    "entrance": "Вхід"
+  "hero": {
+    "leftBlock": {
+      "title": "Convierta el PNR a una forma comprensible para el pasajero",
+      "description": "Pegue el PNR desde cualquier GDS, lo convertiremos en un formulario legible para el pasajero. Convierte opciones en segundos. Ahorre su tiempo.",
+      "examples": [
+        "15 de octubre, 10:10 - 12:00, Londres (Gatwick) - Vancouver, TS 275, Air Transat",
+        "15 de octubre, 13:35 - 14:35, Vancouver - Seattle (Tacoma), AC 8097, Air Canada",
+        "17 de octubre, 17:00 - 17:53, Seattle (Tacoma) - Portland, AS 2254, Alaska Airlines",
+        "17 de octubre, 6:45 p. m. - 12:10 p. m., Portland-Londres (Heathrow), AA 7007, American Airlines"
+      ]
+    },
+    "rightBlock": {
+      "label": "Opción número 1",
+      "placeholder": "Insertar PNR desde cualquier GDS",
+      "info": ["Enlace creado:", "Copiar texto", "Copiar enlace", "Opciones de Vancouver", "Londres", "15 de octubre", "Vancouver", "Precio:", "Equipaje incluido", "Solo equipaje de mano" , "+ Marca propia"]
+    }
   },
-  "link": "",
-  "info_text": ""
+
+  "footer": ["¿Aún no tienes una cuenta?", "¿Ya tienes una cuenta?"],
+
+  "form": ["Registrarse", "Iniciar sesión", "Nombre", "Correo electrónico", "Contraseña", "Crear una cuenta", "Iniciar sesión"]
 }

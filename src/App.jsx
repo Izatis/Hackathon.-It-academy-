@@ -1,28 +1,28 @@
-import { Suspense } from "react";
-import { Route, Routes } from "react-router-dom";
+import {React, Suspense } from "react";
 import "./App.css";
+import { Route, Routes } from "react-router-dom";
 import ExampleContextProvider from "./context";
-import Main from "./pages/Main/Main";
 import "./18n";
+
+import SignUp from "./pages/SignUp/SignUp";
+import Main from "./pages/Main/Main";
 import SignIn from "./pages/SignIn/SignIn";
 import Layout from "./components/Layout/Layout";
-import "./App.css";
-import SignUp from "./pages/SignUp/SignUp";
 
 function App() {
-  return (
   
-     <ExampleContextProvider>
+  return (
+    <ExampleContextProvider>
       <Suspense fallback={<div>Loading...</div>}>
         <Layout>
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/login" element={<SignIn />} />
-            <Route path='/register' element={<SignUp/>}/>
+            <Route path="/register" element={<SignUp />} />
           </Routes>
         </Layout>
       </Suspense>
-    </ExampleContextProvider> 
+    </ExampleContextProvider>
   );
 }
 

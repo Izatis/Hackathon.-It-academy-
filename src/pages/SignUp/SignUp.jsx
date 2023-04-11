@@ -18,6 +18,9 @@ import { Model } from '../../models/Car';
 
 
 const SignUp = () => {
+ // Функция - для смены текста
+ const { t } = useContext(exampleContext);
+
   // Здесь сохраняется сообщение от сервера
   const [message, setMessage] = useState("");
 
@@ -60,15 +63,24 @@ const SignUp = () => {
 
   return (
     <section className={s.sign_up}>
-      {/* <motion.img initial="hidden"
-          whileInView="visible"
-          transition={{ duration: 1 }}
-          variants={{
-            visible: { opacity: 1, x: 0 },
-            hidden: { opacity: 0, x: 100 },
-          }} className={s.sign_up_wallpaper} src={'https://cdn.dribbble.com/users/112518/screenshots/4612754/long-version-v4.gif'} alt="wallpaper" /> */}
-
-<div className={s.animation}>
+     
+<motion.div 
+initial="hidden"
+whileInView="visible"
+transition={{ duration: 1 }}
+variants={{
+  visible: { opacity: 1, x: 0 },
+  hidden: { opacity: 0, x: 100 },
+}} className={s.animation}>
+  <motion.h1 
+   initial="hidden"
+  whileInView="visible"
+  transition={{ duration: 1 }}
+  variants={{
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: 100 },
+  }}
+  className={s.animation_text}>{t("general.2")}</motion.h1>
 <Canvas camera={{position: [2, 0, -4], zoom: 1}}>
       <OrbitControls/>
         <color attach="background" />
@@ -85,7 +97,7 @@ const SignUp = () => {
         <Model/>
       </Suspense>
       </Canvas>
-</div>
+</motion.div>
 
       {isLoading ? (
         <div className={s.sign_up_content}>
@@ -95,7 +107,7 @@ const SignUp = () => {
           variants={{
             visible: { opacity: 1, x: 0 },
             hidden: { opacity: 0, x: 100 },
-          }}>Регистрация</motion.h1>
+          }}>{t("form.0")}</motion.h1>
           <form className={s.sign_up_inputs_btn}>
             <MyInput
               value={userData.name}
@@ -103,7 +115,7 @@ const SignUp = () => {
                 setUserData({ ...userData, name: e.target.value })
               }
               type="name"
-              placeholder="Name"
+              placeholder={t("form.2")}
             ></MyInput>
             <MyInput
               value={userData.email}
@@ -111,7 +123,7 @@ const SignUp = () => {
                 setUserData({ ...userData, email: e.target.value })
               }
               type="email"
-              placeholder="E-mail"
+              placeholder={t("form.3")}
             ></MyInput>
 
             <MyInput
@@ -120,7 +132,7 @@ const SignUp = () => {
                 setUserData({ ...userData, password: e.target.value })
               }
               type={type}
-              placeholder="Пароль"
+              placeholder={t("form.4")}
             >
               <span className={s.sign_up_hide_password} onClick={passwordHide}>
                 <img src={eye} alt="eye" />
@@ -132,11 +144,11 @@ const SignUp = () => {
             {/* Это сравнение проверяет на содержания инпутов и изменяет кнопки */}
             {!!userData.email.length && !!userData.password.length && !!userData.name.length ? (
               <MyButton className={s.redister} onClick={verifyUser}>
-                Создать аккаунт
+                {t("form.5")}
               </MyButton>
             ) : (
               <MyButton className={s.redister} disabled>
-                Создать аккаунт
+                  {t("form.5")}
               </MyButton>
             )}
           </form>

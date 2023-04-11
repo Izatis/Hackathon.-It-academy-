@@ -2,9 +2,9 @@ import { Form, Input } from "antd";
 import React from "react";
 import "./MyInput.css";
 
-const MyInput = ({ label, children, ...props }) => {
+const MyInput = ({ minWidth, children, ...props }) => {
   return (
-    <div className='input_block'>
+    <div style={{minWidth: minWidth}} className='input_block'>
       {children}
       <Input {...props} />
     </div>
