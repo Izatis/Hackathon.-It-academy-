@@ -4,8 +4,8 @@ import { useTranslation } from "react-i18next";
 export const exampleContext = createContext();
 
 const ExampleContextProvider = ({ children }) => {
-  const [t, i18n] = useTranslation();
-console.log(t);
+  const [t, i18next] = useTranslation();
+  
   // Это состояние загрузки
   const [isLoading, setIsLoading] = useState(true);
 
@@ -20,7 +20,7 @@ console.log(t);
   };
   let values = {
     t,
-    i18n,
+    i18next,
     isLoading,
     setIsLoading,
     type,

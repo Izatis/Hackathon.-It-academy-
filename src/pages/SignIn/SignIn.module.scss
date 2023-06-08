@@ -1,18 +1,19 @@
-.sign_in {
+.signIn {
+  max-width: 1440px;
+  width: 100%;
+  height: 100vh;
   display: flex;
-  padding: 20px 40px;
   justify-content: space-around;
   align-items: center;
-  height: calc(100vh - 165px) !important;
+  // padding: 20px 40px;
+  margin: auto;
 
-
-
-  .sign_in_wallpaper {
+  .signIn_wallpaper {
     width: 520px;
     border-radius: 40px;
   }
 
-  .sign_in_content {
+  .signIn__content {
     max-width: 400px;
     width: 100%;
     background: #fbfdff;
@@ -23,26 +24,27 @@
     padding: 30px;
     box-sizing: border-box;
 
-    
     h1 {
       text-align: center;
+      font-family: "Montserrat", sans-serif;
+      font-style: normal;
       font-weight: 500;
       font-size: 30px;
       line-height: 140%;
       margin: 10px 0 20px 0;
     }
 
-    .sign_in_inputs_btn {
+    .signIn__form {
       display: flex;
       flex-direction: column;
       gap: 25px;
       position: relative;
 
-      .sign_in_hide_password {
+      .hidePasswordIcon {
         position: absolute;
         z-index: 1;
         right: 18.75px;
-        bottom: 75px;
+        bottom: 10px;
 
         img {
           width: max-content;
@@ -51,30 +53,56 @@
           cursor: pointer;
         }
       }
-      .sign_in_message {
-        color: #f11515;
+
+      .error {
+        p {
+          font-family: "Montserrat", sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 15px;
+          text-transform: uppercase;
+          color: #f11515;
+          margin: 0;
+        }
       }
+
       .enter {
         height: 40px;
         border: none;
         box-shadow: 5px 5px 12px -2px rgba(72, 145, 255, 0.45);
         transition: 0.7s;
-        font-size: 15px;
+        font-family: "Montserrat", sans-serif;
+        font-style: normal;
         font-weight: 700;
+        font-size: 15px;
+      line-height: 130%;
         color: #4891ff;
       }
 
       .enter:hover {
         background-color: #1f54fb;
-        color: #fff !important;
+        color: #ffffff !important;
+      }
+
+      .disabled {
+        height: 40px;
+        background: #d5d5d5;
+        border: none;
+        box-shadow: 0px 5px 10px 1px rgba(34, 60, 80, 0.15) inset;
+        transition: 0.7s;
+        font-family: "Montserrat", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+      line-height: 130%;
+        color: #f3f3f3;
       }
     }
   }
 }
 
 @media (max-width: 1050px) {
-  section{
+  section {
     display: block;
   }
-  
 }

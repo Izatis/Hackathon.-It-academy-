@@ -1,18 +1,18 @@
 import React, { useContext } from "react";
-import "./Footer.module.scss";
+import s from "./Footer.module.scss";
+
 import { Link, useLocation } from "react-router-dom";
-import { exampleContext } from "../../context";
 import { motion } from "framer-motion";
+import { exampleContext } from "../../context";
 
 const Footer = () => {
+  // Достаем текущий адрес
+  const location = useLocation();
   // Функция - для смены текста
   const { t } = useContext(exampleContext);
 
-  // Достаем текущий адрес
-  const location = useLocation();
-
   return (
-    <footer>
+    <footer className={s.footer}>
       {/* Сравниваем если пользовотель находится /login здесь  */}
       {location.pathname === "/" || location.pathname === "/login" ? (
         <>

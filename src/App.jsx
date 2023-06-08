@@ -1,8 +1,8 @@
 import {React, Suspense } from "react";
-import "./App.css";
+
 import { Route, Routes } from "react-router-dom";
 import ExampleContextProvider from "./context";
-import "./18n";
+import "./18next";
 
 import SignUp from "./pages/SignUp/SignUp";
 import Main from "./pages/Main/Main";

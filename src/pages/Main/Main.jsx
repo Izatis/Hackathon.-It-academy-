@@ -2,9 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import s from "./Main.module.scss";
 import img from "../../assets/airplane.png";
 import { motion } from "framer-motion";
-import MyInput from "../../components/MUI/MyInput/MyInput";
+import MyInput from "../../components/UI/MyInput/MyInput";
 import { exampleContext } from "../../context";
-import MyButton from "../../components/MUI/MyButton/MyButton";
+import MyButton from "../../components/UI/MyButton/MyButton";
 import { Input } from "antd";
 import copy from "../../assets/copy.png";
 import axios from "axios";
@@ -22,7 +22,7 @@ const Main = () => {
 
   return (
     <section className={s.main}>
-      <div className={s.left_block}>
+      <div className={s.main__leftBlock}>
         <img src={img} alt="img" />
 
         <motion.h1
@@ -81,9 +81,9 @@ const Main = () => {
           </motion.ul>
         </div>
       </div>
-      <div className={s.right_block}>
-        <div style={{ width: "100%" }}>
-          <label style={{ width: "100%" }} htmlFor="">
+      <div className={s.main__rightBlock}>
+        <div>
+          <label htmlFor="">
             {t("hero.rightBlock.label")}
             <MyInput
               onChange={(e) => setPhr({ pnrInfo: e.target.value })}
@@ -93,7 +93,7 @@ const Main = () => {
           </label>
 
           <div className={s.info}>
-            <header>
+            <header className={s.info__header}>
               <div>
                 <span>{t("hero.rightBlock.info.0")}</span>
                 <p>https://aviato.me/509ffb2eca</p>
@@ -107,18 +107,18 @@ const Main = () => {
                 {t("hero.rightBlock.info.2")}
               </p>
             </header>
-            <div className={s.text_content}>
+            <div className={s.info__content}>
               <h1>{t("hero.rightBlock.info.3")}</h1>
               <div className={s.flights}>
-                <div className={s.items}>
-                  <div className={s.item}>
+                <div className={s.flights__items}>
+                  <div>
                     <p>{t("hero.rightBlock.info.4")}</p>
                     <p>
                       <strong>10:10</strong>, {t("hero.rightBlock.info.5")}
                     </p>
                   </div>
                   <span>Air Transat</span>
-                  <div className={s.item}>
+                  <div>
                     <p>{t("hero.rightBlock.info.6")}</p>
                     <p>
                       <strong>12:00</strong>
@@ -126,32 +126,31 @@ const Main = () => {
                   </div>
                 </div>
                 <br />
-
-                <div className={s.info_btn}>
-                  <MyInput
-                    style={{ maxWidth: 70, border: "none" }}
-                    type="number"
-                    min="5"
-                    minWidth={108}
-                  >
-                    {t("hero.rightBlock.info.7")}
-                  </MyInput>
-                  <MyButton
-                    className={activeSecond ? s.active : s.include}
-                    onClick={() => setActive(false)}
-                  >
-                    {t("hero.rightBlock.info.8")}
-                  </MyButton>
-                  <MyButton
-                    className={active ? s.active : s.include}
-                    onClick={() => setActiveSecond(false)}
-                  >
-                    {t("hero.rightBlock.info.9")}
-                  </MyButton>
-                  <MyButton className={s.active}>
-                    {t("hero.rightBlock.info.10")}
-                  </MyButton>
-                </div>
+              </div>
+              <div className={s.info__btns}>
+                <MyInput
+                  style={{ maxWidth: 70, border: "none" }}
+                  type="number"
+                  min="5"
+                  minWidth={105.3}
+                >
+                  {t("hero.rightBlock.info.7")}
+                </MyInput>
+                <MyButton
+                  className={activeSecond ? s.active : s.include}
+                  onClick={() => setActive(false)}
+                >
+                  {t("hero.rightBlock.info.8")}
+                </MyButton>
+                <MyButton
+                  className={active ? s.active : s.include}
+                  onClick={() => setActiveSecond(false)}
+                >
+                  {t("hero.rightBlock.info.9")}
+                </MyButton>
+                <MyButton className={s.active}>
+                  {t("hero.rightBlock.info.10")}
+                </MyButton>
               </div>
             </div>
           </div>

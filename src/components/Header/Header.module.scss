@@ -1,133 +1,108 @@
-header {
+@import "../../styles/varibales.module.scss";
+
+.header {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  width: 100%;
   background: #1f54fb;
   box-shadow: 5px 5px 12px -2px rgba(72, 145, 255, 0.45);
   border-radius: 0px 0px 20px 20px;
-  .content {
-    max-width: 1440px;
-    width: 100%;
-    height: auto;
+  padding: 1% 0;
+  box-sizing: border-box;
+
+  &__content {
+    @include centering();
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0 auto;
-    padding: 0 40px;
-    box-sizing: border-box;
-    .logo {
+
+    .header__logo {
       font-family: "Montserrat Alternates", sans-serif;
       font-style: normal;
-      font-weight: 800;
-      font-size: 32px;
-      line-height: 152%;
-      color: #fff;
-      margin: 0;
+      @include adaptive-value("font-weight", 800, 700);
+      @include adaptive-value("font-size", 32, 25);
+      line-height: 130%;
+      color: #ffffff;
       cursor: pointer;
     }
 
-    .header_btn {
+    .header__btns {
       display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      margin: 16.5px;
 
       .btn {
-        font-family: "Montserrat", sans-serif;
-        font-style: normal;
         font-weight: 700;
-        font-size: 12px;
-        line-height: 152%;
+        @include adaptive-value("font-size", 13, 8);
+        line-height: 130%;
         color: #4891ff;
-        margin-right: 13px;
-      }
-      .btn:hover {
-        background-color: #1f54fb;
-        color: #fff !important;
-        border: 1px solid #fff;
+        margin: 0 2%;
+
+        &:hover {
+          background-color: #1f54fb;
+          color: #ffffff;
+        }
       }
 
-      .sign {
-        font-family: "Montserrat", sans-serif;
-        font-style: normal;
+      .auth {
         font-weight: 700;
-        font-size: 15px;
-        line-height: 152%;
+        @include adaptive-value("font-size", 15, 13);
+        line-height: 130%;
         color: #4891ff;
-        margin-left: 50px;
-      }
-      .sign:hover {
-        background-color: #1f54fb;
-        color: #fff !important;
-        border: 1px solid #fff;
+        margin: 0 0 0 40px;
+
+        &:hover {
+          background-color: #1f54fb;
+          color: #ffffff;
+          border: 1px solid #ffffff;
+        }
       }
     }
   }
-  .header_btn_clone {
+
+  &__btns_clone {
     display: none;
+
+    .btn_clone {
+      height: 20px;
+      font-weight: 700;
+      @include adaptive-value("font-size", 8, 8);
+      line-height: 130%;
+      color: #4891ff;
+      margin: 10px 13px 0;
+    }
+
+    .btn_clone:hover {
+      background-color: #1f54fb;
+      color: #ffffff;
+    }
   }
 }
 
 @media screen and (max-width: 768px) {
-  header {
-    .content {
-      padding: 0 30px;
-      .logo {
-        font-weight: 700;
-        font-size: 27px;
-      }
-      .header_btn {
-        margin: 6.5px;
+  .header {
+    padding: 2% 0;
+    box-sizing: border-box;
+
+    &__content {
+      .header__btns {
         .btn {
           display: none;
         }
-        .sign {
-          font-size: 12px;
-          margin-left: 30px;
-        }
       }
     }
-    .header_btn_clone {
+
+    &__btns_clone {
       display: flex;
-      justify-content: flex-end;
-      margin: auto;
-      padding: 7px 30px;
-      box-sizing: border-box;
-      .btn_clone {
-        height: 20px;
-        font-family: "Montserrat", sans-serif;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 8px;
-        line-height: 152%;
-        color: #4891ff;
-        margin-right: 13px;
-      }
-      .btn_clone:hover {
-        background-color: #1f54fb;
-        color: #fff !important;
-        border: 1px solid #fff;
-      }
+      justify-content: center;
     }
   }
 }
 
-@media screen and (max-width: 375px) {
-  header {
-    .content {
-      padding: 0 20px;
-      .logo {
-        font-size: 25px;
-      }
-
-      .header_btn {
-        .sign {
-          height: 30px;
-          font-size: 13px;
-          margin-left: 50px;
-        }
-      }
-    }
-    .header_btn_clone {
+@media screen and (max-width: 425px) {
+  .header {
+    &__btns_clone {
       .btn_clone {
-        margin-right: 10px;
+        margin: 10px 6px 0;
       }
     }
   }
