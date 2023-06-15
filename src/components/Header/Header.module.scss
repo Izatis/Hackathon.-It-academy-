@@ -35,7 +35,7 @@
         @include adaptive-value("font-size", 13, 8);
         line-height: 130%;
         color: #4891ff;
-        margin: 0 2%;
+        margin: 0 10px;
 
         &:hover {
           background-color: #1f54fb;
@@ -68,7 +68,7 @@
       @include adaptive-value("font-size", 8, 8);
       line-height: 130%;
       color: #4891ff;
-      margin: 10px 13px 0;
+      margin: 2% 2% 0;
     }
 
     .btn_clone:hover {
@@ -94,16 +94,6 @@
     &__btns_clone {
       display: flex;
       justify-content: center;
-    }
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .header {
-    &__btns_clone {
-      .btn_clone {
-        margin: 10px 6px 0;
-      }
     }
   }
 }
