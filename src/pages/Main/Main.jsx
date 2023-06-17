@@ -1,30 +1,28 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import s from "./Main.module.scss";
-import img from "../../assets/airplane.png";
+
 import { motion } from "framer-motion";
-import MyInput from "../../components/UI/MyInput/MyInput";
 import { exampleContext } from "../../context";
-import MyButton from "../../components/UI/MyButton/MyButton";
-import { Input } from "antd";
+import img from "../../assets/airplane.png";
 import copy from "../../assets/copy.png";
-import axios from "axios";
-import classNames from "classnames";
+
+import MyButton from "../../components/UI/MyButton/MyButton";
+import MyInput from "../../components/UI/MyInput/MyInput";
 
 const Main = () => {
+  const [active, setActive] = useState(true);
+  const [activeSecond, setActiveSecond] = useState(true);
+
   // Функция - для смены текста
   const { t } = useContext(exampleContext);
   const [phr, setPhr] = useState({
     pnrInfo: "",
   });
 
-  const [active, setActive] = useState(true);
-  const [activeSecond, setActiveSecond] = useState(true);
-
   return (
     <section className={s.main}>
       <div className={s.main__leftBlock}>
         <img src={img} alt="img" />
-
         <motion.h1
           initial="hidden"
           whileInView="visible"
@@ -51,6 +49,7 @@ const Main = () => {
 
         <div className={s.example}>
           <motion.ol
+          className={s.ol}
             initial="hidden"
             whileInView="visible"
             transition={{ duration: 1 }}

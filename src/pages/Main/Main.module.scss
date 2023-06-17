@@ -1,52 +1,52 @@
+@import "../../styles/varibales.module.scss";
+
 .main {
-  max-width: 1440px;
+  @include centering();
   display: flex;
   gap: 20px;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.38;
-  margin: auto;
-  padding: 40px;
-  box-sizing: border-box;
-
+  margin: 8% auto 5%;
+  // font-weight: 500;
+  // font-size: 12px;
+  //     line-height: 130%;
+  // height: calc(100vh - 188px)
+  ;
   .main__leftBlock {
-    max-width: 640px;
-    width: 100%;
-    box-sizing: border-box;
-    background: #fbfdff;
-    box-shadow: 5px 5px 12px -2px rgba(72, 145, 255, 0.45);
-    border-radius: 15px;
+    min-width: 640px;
     height: calc(100vh - 188px);
-    padding: 20px 20px 10px;
+    display: flex;
+    flex-direction: column;
+    @include adaptive-value("gap", 10, 10);
+    border-radius: 2%;
+    box-shadow: 5px 5px 12px -2px rgba(72, 145, 255, 0.45);
+    padding: 2%;
 
     img {
-      height: 40px;
-      width: 40px;
+      @include adaptive-value("width", 40, 20);
     }
 
     h1 {
       font-family: "Montserrat Alternates", sans-serif;
       font-style: normal;
       font-weight: 700;
-      font-size: 25px;
-      line-height: 1.38;
+      @include adaptive-value("font-size", 25, 20);
+      line-height: 130%;
       color: #333;
-      margin: 2px 0 7px;
     }
 
     p {
-      font-size: 14px;
+      font-weight: 500;
+      @include adaptive-value("font-size", 14, 12);
+      line-height: 1.86;
       color: #333;
     }
 
     .example {
       border: 1px solid rgba(51, 51, 51, 0.1);
-      border-radius: 4px;
-      font-size: 13px;
-      margin: 10px 0;
-      padding: 0 10px 0 0;
-      box-sizing: border-box;
-      ol {
+      border-radius: 2%;
+      @include adaptive-value("font-size", 13, 11);
+
+      .ol {
+        list-style:square !important;
       }
 
       ul {
@@ -66,7 +66,7 @@
         font-style: normal;
         font-weight: 500;
         font-size: 14px;
-        line-height: 1.38;
+        line-height: 130%;
       }
     }
 
@@ -109,7 +109,7 @@
           font-style: normal;
           font-weight: 700;
           font-size: 25px;
-          line-height: 1.38;
+          line-height: 130%;
           color: #333;
         }
         .flights {
@@ -147,101 +147,6 @@
           }
           .include {
             display: none;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 1300px) {
-  .main {
-    padding: 25px;
-
-    .main__leftBlock {
-      min-width: 447px;
-      height: calc(100vh - 188px);
-      padding: 10px;
-
-      h1 {
-        font-size: 22px;
-      }
-
-      p {
-        font-size: 11px;
-      }
-      .example {
-        font-size: 10px;
-        margin: 10px 10px 10px 0;
-
-        ol {
-          padding-left: 28px;
-        }
-
-        ul {
-          padding-left: 18px;
-        }
-      }
-    }
-
-    .main__rightBlock {
-      label {
-        font-size: 11px;
-        input::placeholder {
-          font-size: 11px;
-        }
-      }
-
-      .info {
-        margin: 15px 0;
-        .info__header {
-          padding: 7px 10px 0;
-          font-size: 10px;
-          p {
-            h1 {
-              font-size: 12px;
-            }
-            img {
-              width: 17px;
-            }
-          }
-        }
-        .info__content {
-          padding: 0 15px 10px;
-          h1 {
-            font-size: 22px;
-            margin: 15.26px 0;
-          }
-          .flights {
-            padding: 2px 9px;
-
-            .flights__items {
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-              p {
-                margin: 0;
-              }
-            }
-          }
-          .info__btns {
-            button {
-              height: 30px;
-              font-size: 11px;
-              margin-left: 3px;
-            }
-            .active {
-            }
-            .include {
-            }
-
-            .active:focus {
-              background-color: #1f54fb;
-              color: aliceblue;
-            }
-            .include {
-              display: none;
-            }
           }
         }
       }

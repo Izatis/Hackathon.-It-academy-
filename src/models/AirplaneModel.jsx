@@ -12,7 +12,9 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 
 export function AirplaneModel(props) {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF("/airplane/scene.gltf");
+  const { nodes, materials, animations } = useGLTF(
+    "/Boeing-787- Dreamliner/scene.gltf"
+  );
   const { actions } = useAnimations(animations, group);
   return (
     <group ref={group} {...props} dispose={null}>

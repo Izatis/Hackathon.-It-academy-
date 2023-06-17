@@ -15,61 +15,35 @@ const Footer = () => {
     <footer className={s.footer}>
       {/* Сравниваем если пользовотель находится /login здесь  */}
       {location.pathname === "/" || location.pathname === "/login" ? (
-        <>
-          <Link to={"/register"}>
-            {/* то показываем вот это */}
-            <motion.p
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1 }}
-              variants={{
-                visible: { opacity: 1, x: 0 },
-                hidden: { opacity: 0, x: 100 },
-              }}
-            >
-              {t("footer.0")}
-            </motion.p>
-            <motion.a
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1 }}
-              variants={{
-                visible: { opacity: 1, x: 0 },
-                hidden: { opacity: 0, x: 100 },
-              }}
-            >
-              {t("general.0")}
-            </motion.a>
-          </Link>
-        </>
+        // то показываем вот это
+        <motion.span
+          className={s.footer__content}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ duration: 1 }}
+          variants={{
+            visible: { opacity: 1, x: 0 },
+            hidden: { opacity: 0, x: 100 },
+          }}
+        >
+          <p>{t("footer.0")}</p>
+          <Link to={"/register"}>{t("general.0")}</Link>
+        </motion.span>
       ) : (
-        <>
-          <Link to={"/login"}>
-            {/* в противном случае вот это */}
-            <motion.p
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1 }}
-              variants={{
-                visible: { opacity: 1, x: 0 },
-                hidden: { opacity: 0, x: 100 },
-              }}
-            >
-              {t("footer.1")}
-            </motion.p>
-            <motion.a
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1 }}
-              variants={{
-                visible: { opacity: 1, x: 0 },
-                hidden: { opacity: 0, x: 100 },
-              }}
-            >
-              {t("general.1")}
-            </motion.a>
-          </Link>
-        </>
+        // в противном случае вот это
+        <motion.span
+          className={s.footer__content}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ duration: 1 }}
+          variants={{
+            visible: { opacity: 1, x: 0 },
+            hidden: { opacity: 0, x: 100 },
+          }}
+        >
+          <p>{t("footer.1")}</p>
+          <Link to={"/login"}>{t("general.1")}</Link>
+        </motion.span>
       )}
     </footer>
   );

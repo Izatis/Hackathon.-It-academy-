@@ -5,7 +5,7 @@ export const exampleContext = createContext();
 
 const ExampleContextProvider = ({ children }) => {
   const [t, i18next] = useTranslation();
-  
+  console.log(t);
   // Это состояние загрузки
   const [isLoading, setIsLoading] = useState(true);
 

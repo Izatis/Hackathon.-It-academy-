@@ -5,19 +5,28 @@
   height: 5%;
   position: fixed;
   bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -5px -5px 12px -2px rgba(72, 145, 255, 0.45);
 
-  a {
+  .footer__content {
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-weight: 600;
-    @include adaptive-value("font-size", 16, 12);
-    line-height: 130%;
-    color: #1f54fb;
-    user-select: none;
+    align-items: center;
 
     p {
+      font-weight: 600;
+      @include adaptive-value("font-size", 16, 12);
+      line-height: 130%;
       color: #838383;
+    }
+
+    a {
+      font-weight: 600;
+      @include adaptive-value("font-size", 16, 12);
+      line-height: 130%;
+      color: #1f54fb;
     }
   }
 }
