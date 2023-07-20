@@ -1,17 +1,15 @@
-import React, { Suspense, useContext, useState } from "react";
+import React, { useState, useContext } from "react";
 import s from "./SignUp.module.scss";
 import { exampleContext } from "../../context";
 import { motion } from "framer-motion";
 import axios from "axios";
-import { OrbitControls } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import eye from "../../assets/eye.png";
+import { AiFillEye } from "react-icons/ai";
 
 import MyInput from "../../components/UI/MyInput/MyInput";
 import MyButton from "../../components/UI/MyButton/MyButton";
 import Loading from "../../components/Loading/Loading";
-import { AirplaneModel } from "../../models/AirplaneModel";
 import { useNavigate } from "react-router-dom";
+import ModelComponent from "../../components/3dModel/3dModel";
 
 const SignUp = () => {
   // Данные пользователя для регистрации
@@ -110,21 +108,7 @@ const SignUp = () => {
         >
           {t("general.2")}
         </motion.h1>
-        <Canvas camera={{ position: [2, 0, -4], zoom: 1 }}>
-          <OrbitControls />
-          <color attach="background" />
-          <hemisphereLight intensity={0.35} />
-          <spotLight
-            position={[10, 10, 10]}
-            angle={0.3}
-            penumbra={1}
-            intensity={2}
-            castShadow
-          />
-          <Suspense fallback={null}>
-            <AirplaneModel />
-          </Suspense>
-        </Canvas>
+        <ModelComponent />
       </motion.div>
 
       {isLoading ? (
@@ -192,7 +176,7 @@ const SignUp = () => {
               }
             >
               <span className={s.hidePasswordIcon} onClick={passwordHide}>
-                <img src={eye} alt="eye" />
+                <AiFillEye />
               </span>
             </MyInput>
 

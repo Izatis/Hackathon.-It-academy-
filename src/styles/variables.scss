@@ -1,0 +1,8 @@
+$color_1: #ffffff;
+$color_2: #1f54fb;
+$color_3: #4891ff;
+
+@mixin container {
+  max-width: 1440px;
+  margin: 0 auto;
+}

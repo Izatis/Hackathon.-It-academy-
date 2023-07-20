@@ -1,99 +1,71 @@
-@import "../../styles/varibales.module.scss";
+@import "../../styles/adaptive.scss";
+@import "../../styles/variables.scss";
 
 .header {
   position: fixed;
-  z-index: 10;
   top: 0;
   width: 100%;
-  background: #1f54fb;
-  box-shadow: 5px 5px 12px -2px rgba(72, 145, 255, 0.45);
+  background: $color_2;
+  box-shadow: 0 5px 12px -2px rgba(72, 145, 255, 0.45);
   border-radius: 0px 0px 20px 20px;
-  padding: 1% 0;
-  box-sizing: border-box;
 
   &__content {
-    @include centering();
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 1% 5%;
+    box-sizing: border-box;
 
     .header__logo {
+      color: $color_1;
       font-family: "Montserrat Alternates", sans-serif;
       font-style: normal;
-      @include adaptive-value("font-weight", 800, 700);
-      @include adaptive-value("font-size", 32, 25);
-      line-height: 130%;
-      color: #ffffff;
+      @include adaptive-value("font-weight", 800, 700, 1);
+      @include adaptive-value("font-size", 32, 25, 1);
+      line-height: normal;
       cursor: pointer;
     }
 
     .header__btns {
       display: flex;
+      @include adaptive-value("gap", 70, 10, 1);
 
-      .btn {
-        font-weight: 700;
-        @include adaptive-value("font-size", 13, 8);
-        line-height: 130%;
-        color: #4891ff;
-        margin: 0 10px;
-
-        &:hover {
-          background-color: #1f54fb;
-          color: #ffffff;
-        }
+      .header__languageBtns {
+        display: flex;
+        gap: 20px;
       }
 
-      .auth {
+      .header__languageBtn {
+        display: none;
+        color: $color_3;
+        @include adaptive-value("font-size", 20, 15, 1);
         font-weight: 700;
-        @include adaptive-value("font-size", 15, 13);
-        line-height: 130%;
-        color: #4891ff;
-        margin: 0 0 0 40px;
+      }
 
-        &:hover {
-          background-color: #1f54fb;
-          color: #ffffff;
-          border: 1px solid #ffffff;
+      .header__authBtn {
+        span {
+          @include adaptive-value("font-size", 15, 13, 1);
         }
       }
-    }
-  }
-
-  &__btns_clone {
-    display: none;
-
-    .btn_clone {
-      height: 20px;
-      font-weight: 700;
-      @include adaptive-value("font-size", 8, 8);
-      line-height: 130%;
-      color: #4891ff;
-      margin: 2% 2% 0;
-    }
-
-    .btn_clone:hover {
-      background-color: #1f54fb;
-      color: #ffffff;
     }
   }
 }
 
 @media screen and (max-width: 768px) {
   .header {
-    padding: 2% 0;
-    box-sizing: border-box;
-
     &__content {
+      padding: 2% 5%;
+      box-sizing: border-box;
+
       .header__btns {
-        .btn {
+        .header__languageBtns {
           display: none;
         }
-      }
-    }
 
-    &__btns_clone {
-      display: flex;
-      justify-content: center;
+        .header__languageBtn {
+          display: block;
+        }
+      }
     }
   }
 }

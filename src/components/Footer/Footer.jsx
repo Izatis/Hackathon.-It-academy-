@@ -6,16 +6,12 @@ import { motion } from "framer-motion";
 import { exampleContext } from "../../context";
 
 const Footer = () => {
-  // Достаем текущий адрес
   const location = useLocation();
-  // Функция - для смены текста
   const { t } = useContext(exampleContext);
 
   return (
     <footer className={s.footer}>
-      {/* Сравниваем если пользовотель находится /login здесь  */}
       {location.pathname === "/" || location.pathname === "/login" ? (
-        // то показываем вот это
         <motion.span
           className={s.footer__content}
           initial="hidden"
@@ -26,11 +22,10 @@ const Footer = () => {
             hidden: { opacity: 0, x: 100 },
           }}
         >
-          <p>{t("footer.0")}</p>
+          <span>{t("footer.0")}</span>
           <Link to={"/register"}>{t("general.0")}</Link>
         </motion.span>
       ) : (
-        // в противном случае вот это
         <motion.span
           className={s.footer__content}
           initial="hidden"
@@ -41,7 +36,7 @@ const Footer = () => {
             hidden: { opacity: 0, x: 100 },
           }}
         >
-          <p>{t("footer.1")}</p>
+          <span>{t("footer.1")}</span>
           <Link to={"/login"}>{t("general.1")}</Link>
         </motion.span>
       )}

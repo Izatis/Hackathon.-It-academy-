@@ -1,4 +1,4 @@
-@import "../../styles/varibales.module.scss";
+@import "../../styles/adaptive.scss";
 
 .main {
   @include centering();
@@ -7,35 +7,32 @@
   margin: 8% auto 5%;
   // font-weight: 500;
   // font-size: 12px;
-  //     line-height: 130%;
-  // height: calc(100vh - 188px)
-  ;
+  //       // height: calc(100vh - 188px)
   .main__leftBlock {
     min-width: 640px;
     height: calc(100vh - 188px);
     display: flex;
     flex-direction: column;
-    @include adaptive-value("gap", 10, 10);
+    @include adaptive-value("gap", 10, 10, 1);
     border-radius: 2%;
     box-shadow: 5px 5px 12px -2px rgba(72, 145, 255, 0.45);
     padding: 2%;
 
     img {
-      @include adaptive-value("width", 40, 20);
+      @include adaptive-value("width", 40, 20, 1);
     }
 
     h1 {
       font-family: "Montserrat Alternates", sans-serif;
       font-style: normal;
       font-weight: 700;
-      @include adaptive-value("font-size", 25, 20);
-      line-height: 130%;
+      @include adaptive-value("font-size", 25, 20, 1);
       color: #333;
     }
 
     p {
       font-weight: 500;
-      @include adaptive-value("font-size", 14, 12);
+      @include adaptive-value("font-size", 14, 12, 1);
       line-height: 1.86;
       color: #333;
     }
@@ -43,10 +40,10 @@
     .example {
       border: 1px solid rgba(51, 51, 51, 0.1);
       border-radius: 2%;
-      @include adaptive-value("font-size", 13, 11);
+      @include adaptive-value("font-size", 13, 11, 1);
 
       .ol {
-        list-style:square !important;
+        list-style: square !important;
       }
 
       ul {
@@ -66,7 +63,6 @@
         font-style: normal;
         font-weight: 500;
         font-size: 14px;
-        line-height: 130%;
       }
     }
 
@@ -109,7 +105,6 @@
           font-style: normal;
           font-weight: 700;
           font-size: 25px;
-          line-height: 130%;
           color: #333;
         }
         .flights {

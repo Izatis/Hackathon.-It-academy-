@@ -1,15 +1,15 @@
-import React, {  useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import s from "./SignIn.module.scss";
 import { exampleContext } from "../../context";
 import { motion } from "framer-motion";
 import axios from "axios";
-import gif from "../../assets/long-version-v4.gif";
-import eye from "../../assets/eye.png";
+import gif from "../../assets/airpalne.gif";
 
 import MyInput from "../../components/UI/MyInput/MyInput";
 import MyButton from "../../components/UI/MyButton/MyButton";
 import Loading from "../../components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
+import { AiFillEye } from "react-icons/ai";
 
 const SignIn = () => {
   // Данные пользователя для авторизации
@@ -29,12 +29,11 @@ const SignIn = () => {
 
   // Состояние - сообщения ошибки для email инпута, и для сообщения ошибки от сервера
   const [errorMessage, setErrorMessage] = useState("");
-  
+
   // Отправляем post запрос и за одно проверяется пользователь
   const BASE_URL = "http://localhost:8080";
 
   const navigate = useNavigate();
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -124,7 +123,7 @@ const SignIn = () => {
                 <p>Введите e-mail!</p>
               </div>
             ) : null}
-            
+
             {/* Здесь проверяется сообщения ошибки для email инпута, и для сообщения ошибки от сервера */}
             {errorMessage && (
               <div className={s.error}>
@@ -142,7 +141,7 @@ const SignIn = () => {
               }
             >
               <span className={s.hidePasswordIcon} onClick={passwordHide}>
-                <img src={eye} alt="eye" />
+                <AiFillEye />
               </span>
             </MyInput>
 
@@ -152,7 +151,6 @@ const SignIn = () => {
                 <p>Введите пароль!</p>
               </div>
             ) : null}
-
 
             {/* Это сравнение проверяет на содержания поля инпутов и изменяет кнопки */}
             {!!userLogin.email.length && !!userLogin.password.length ? (
