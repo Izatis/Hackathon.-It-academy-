@@ -1,6 +1,6 @@
 {
   "general": ["Inscription", "Entrer", "modèle 3D"],
-
+  "header": "Choisissez la langue",
   "hero": {
     "leftBlock": {
       "title": "Convertir le PNR en une forme compréhensible pour le passager",

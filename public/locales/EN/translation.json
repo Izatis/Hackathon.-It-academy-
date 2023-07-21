@@ -1,6 +1,6 @@
 {
   "general": ["Registration", "Login", "3D Model"],
-
+  "header": "Choose language",
   "hero": {
     "leftBlock": {
       "title": "Convert PNR to understandable form for the passenger",
@@ -15,11 +15,31 @@
     "rightBlock": {
       "label": "Option number 1",
       "placeholder": "Insert PNR from any GDS",
-      "info": ["Link created:", "Copy text", "Copy link", "Vancouver options", "London", "Oct 15", "Vancouver", "Price:", "Baggage included", "Hand luggage only ", "+ Own label"]
+      "info": [
+        "Link created:",
+        "Copy text",
+        "Copy link",
+        "Vancouver options",
+        "London",
+        "Oct 15",
+        "Vancouver",
+        "Price:",
+        "Baggage included",
+        "Hand luggage only ",
+        "+ Own label"
+      ]
     }
   },
 
   "footer": ["Don't have an account yet?", "Already have an account?"],
 
-  "form": ["Register", "Login", "Name", "E-mail", "Password", "Create an account", "Login"]
+  "form": [
+    "Register",
+    "Login",
+    "Name",
+    "E-mail",
+    "Password",
+    "Create an account",
+    "Login"
+  ]
 }

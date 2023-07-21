@@ -1,6 +1,6 @@
 {
   "general": ["Registro", "Iniciar sesión", "Modelo 3D"],
-
+  "header": "Elige lengua",
   "hero": {
     "leftBlock": {
       "title": "Convierta el PNR a una forma comprensible para el pasajero",
@@ -15,11 +15,31 @@
     "rightBlock": {
       "label": "Opción número 1",
       "placeholder": "Insertar PNR desde cualquier GDS",
-      "info": ["Enlace creado:", "Copiar texto", "Copiar enlace", "Opciones de Vancouver", "Londres", "15 de octubre", "Vancouver", "Precio:", "Equipaje incluido", "Solo equipaje de mano" , "+ Marca propia"]
+      "info": [
+        "Enlace creado:",
+        "Copiar texto",
+        "Copiar enlace",
+        "Opciones de Vancouver",
+        "Londres",
+        "15 de octubre",
+        "Vancouver",
+        "Precio:",
+        "Equipaje incluido",
+        "Solo equipaje de mano",
+        "+ Marca propia"
+      ]
     }
   },
 
   "footer": ["¿Aún no tienes una cuenta?", "¿Ya tienes una cuenta?"],
 
-  "form": ["Registrarse", "Iniciar sesión", "Nombre", "Correo electrónico", "Contraseña", "Crear una cuenta", "Iniciar sesión"]
+  "form": [
+    "Registrarse",
+    "Iniciar sesión",
+    "Nombre",
+    "Correo electrónico",
+    "Contraseña",
+    "Crear una cuenta",
+    "Iniciar sesión"
+  ]
 }

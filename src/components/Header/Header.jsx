@@ -10,11 +10,11 @@ import MyButton from "../UI/MyButton/MyButton";
 import MyModal from "../UI/MyModal/MyModal";
 
 const languages = [
-  { language: "EN", flag: "🇺🇸" },
-  { language: "ES", flag: "🇪🇸" },
-  { language: "RU", flag: "🇷🇺" },
-  { language: "FR", flag: "🇫🇷" },
-  { language: "UK", flag: "🇺🇦" },
+  { fullTitle: "English", shortTitle: "EN", flag: "🇺🇸" },
+  { fullTitle: "Español", shortTitle: "ES", flag: "🇪🇸" },
+  { fullTitle: "Russia", shortTitle: "RU", flag: "🇷🇺" },
+  { fullTitle: "France", shortTitle: "FR", flag: "🇫🇷" },
+  { fullTitle: "Ukraine", shortTitle: "UK", flag: "🇺🇦" },
 ];
 
 const Header = () => {
@@ -44,22 +44,20 @@ const Header = () => {
             </motion.h1>
             <div className={s.header__btns}>
               <div className={s.header__languageBtns}>
-                {languages.map((item, index) => {
-                  return (
-                    <MyButton
-                      key={index}
-                      onClick={() => (
-                        setActiveTab(index),
-                        i18next.changeLanguage(item.language)
-                      )}
-                    >
-                      <span>
-                        {item.language}
-                        {activeTab === index && <span>({item.flag})</span>}
-                      </span>
-                    </MyButton>
-                  );
-                })}
+                {languages.map((language, index) => (
+                  <MyButton
+                    key={index}
+                    onClick={() => (
+                      setActiveTab(index),
+                      i18next.changeLanguage(language.shortTitle)
+                    )}
+                  >
+                    <span>
+                      {language.shortTitle}
+                      {activeTab === index && <span>({language.flag})</span>}
+                    </span>
+                  </MyButton>
+                ))}
               </div>
               <MyButton
                 className={s.header__languageBtn}
@@ -87,7 +85,11 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <MyModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+      <MyModal
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+        languages={languages}
+      />
     </>
   );
 };

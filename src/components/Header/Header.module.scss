@@ -30,6 +30,16 @@
       display: flex;
       @include adaptive-value("gap", 70, 10, 1);
 
+      button {
+        span {
+          color: $color_3;
+
+          &:hover {
+            color: $color_1;
+          }
+        }
+      }
+
       .header__languageBtns {
         display: flex;
         gap: 20px;

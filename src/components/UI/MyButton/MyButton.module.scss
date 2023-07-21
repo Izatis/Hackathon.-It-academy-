@@ -3,18 +3,19 @@
 
 .myButton {
   @include adaptive-value("height", 35, 30, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  transition: all 0.3s;
 
   span {
-    color: $color_3;
     font-weight: 700;
     font-size: 12px;
   }
 
   &:hover {
     background-color: $color_2;
-
-    span {
-      color: $color_1;
-    }
+    transition: all 0.3s;
   }
 }
