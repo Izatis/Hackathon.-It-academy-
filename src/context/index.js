@@ -4,13 +4,11 @@ import { useTranslation } from "react-i18next";
 export const exampleContext = createContext();
 
 const ExampleContextProvider = ({ children }) => {
-  const [t, i18next] = useTranslation();
-  console.log(t);
-  // Это состояние загрузки
   const [isLoading, setIsLoading] = useState(true);
-
-  //  Скрытие пароля
   const [type, setType] = useState("password");
+  
+  const [t, i18next] = useTranslation();
+
   const passwordHide = () => {
     if (type === "password") {
       setType("text");
@@ -18,6 +16,7 @@ const ExampleContextProvider = ({ children }) => {
       setType("password");
     }
   };
+
   let values = {
     t,
     i18next,

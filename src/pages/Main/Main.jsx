@@ -8,21 +8,23 @@ import copy from "../../assets/copy.png";
 
 import MyButton from "../../components/UI/MyButton/MyButton";
 import MyInput from "../../components/UI/MyInput/MyInput";
+import Loading from "../../components/Loading/Loading";
 
 const Main = () => {
   const [active, setActive] = useState(true);
   const [activeSecond, setActiveSecond] = useState(true);
-
-  // Функция - для смены текста
-  const { t } = useContext(exampleContext);
   const [phr, setPhr] = useState({
     pnrInfo: "",
   });
 
+  const { t } = useContext(exampleContext);
+
   return (
     <section className={s.main}>
       <div className={s.main__leftBlock}>
-        <img src={img} alt="img" />
+        <div className={s.main__image}>
+          <img src={img} alt="img" />
+        </div>
         <motion.h1
           initial="hidden"
           whileInView="visible"
@@ -34,7 +36,6 @@ const Main = () => {
         >
           {t("hero.leftBlock.title")}
         </motion.h1>
-
         <motion.p
           initial="hidden"
           whileInView="visible"
@@ -46,10 +47,9 @@ const Main = () => {
         >
           {t("hero.leftBlock.description")}
         </motion.p>
-
         <div className={s.example}>
           <motion.ol
-          className={s.ol}
+            className={s.ol}
             initial="hidden"
             whileInView="visible"
             transition={{ duration: 1 }}
@@ -63,7 +63,6 @@ const Main = () => {
             <li>AS2254 F 17OCT 6 SEAPDX HK1 1700 1753 E75 E 0</li>
             <li>AA7007 J 17OCT 6 PDXLHR HK1 1845 1210+1 788 E 0</li>
           </motion.ol>
-
           <motion.ul
             initial="hidden"
             whileInView="visible"
